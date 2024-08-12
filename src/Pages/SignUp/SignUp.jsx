@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Login() {
 
-    const handleLogin = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault();
-        console.log('login')
+        console.log('signup')
     }
 
   return (
@@ -18,14 +18,23 @@ function Login() {
     </div>
 
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <form className="card-body" onSubmit={handleLogin}>
-      <h1 className="text-5xl font-bold text-center">Login</h1>
+      <form className="card-body" onSubmit={handleSignUp}>
+      <h1 className="text-5xl font-bold text-center">Sign Up</h1>
+
+      <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input type="name" name = "name" placeholder="name" className="input input-bordered" required />
+        </div>
+        
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
           <input type="email" name = "email" placeholder="email" className="input input-bordered" required />
         </div>
+        
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
@@ -36,11 +45,11 @@ function Login() {
           </label>
         </div>
         <div className="form-control mt-6">
-          <input type="submit" value="Login" className="btn btn-error" />
+          <input type="submit" value=" Sign Up" className="btn btn-error" />
         </div>
       </form>
 
-      <p className="text-center my-5">Don't have an account? <Link to ="/signup" className="text-orange-600 font-bold">Sign Up</Link></p>
+      <p className="text-center my-5">Already have an account? <Link to ="/login" className="text-orange-600 font-bold">Login</Link></p>
     </div>
   </div>
 </div>
